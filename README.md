@@ -1,2 +1,2 @@
-# ebaughman_demo
+# Elaina Baughman Demo
 First lab project to put on GitHub
