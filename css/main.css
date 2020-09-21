@@ -10,8 +10,9 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
 
-html {
+html{
   color: #222;
   font-size: 1em;
   line-height: 1.4;
@@ -27,12 +28,12 @@ html {
  * Customize the background color to match your design.
  */
 
-::-moz-selection {
+::-moz-selection{
   background: #b3d4fc;
   text-shadow: none;
 }
 
-::selection {
+::selection{
   background: #b3d4fc;
   text-shadow: none;
 }
@@ -41,7 +42,7 @@ html {
  * A better looking default horizontal rule
  */
 
-hr {
+hr{
   display: block;
   height: 1px;
   border: 0;
@@ -61,7 +62,7 @@ canvas,
 iframe,
 img,
 svg,
-video {
+video{
   vertical-align: middle;
 }
 
@@ -69,7 +70,7 @@ video {
  * Remove default fieldset styles.
  */
 
-fieldset {
+fieldset{
   border: 0;
   margin: 0;
   padding: 0;
@@ -79,7 +80,7 @@ fieldset {
  * Allow only vertical resizing of textareas.
  */
 
-textarea {
+textarea{
   resize: vertical;
 }
 
@@ -87,16 +88,58 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+body{
+  font-size: 1em;
+  line-height: 1.4;
+  overflow-x: hidden;
+  margin: auto;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Begin Nav Styles Section */
+
 nav{
   width: 100vw;
   background-color: #000000;
   min-height: 100px;
   color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+nav ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+nav ul li{
+  margin: 35px 15px 0 15px;
+}
+
+nav ul li a{
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover{
+  color: #25b9f5;
+  text-decoration: underline;
+}
+
+/* End Nav Styles */
+
+/* Begin Global Section Styles */
 
 section{
   background-color: #f2f2f2;
   color: #000000;
+  width: 100vw;
+  display: flex;
+  margin: 0;
 }
 
 .Hero{
@@ -104,21 +147,47 @@ section{
   background-color: #efefef;
   height: 600px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/mohercliffs.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero_header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero_header h1{
+  font-size: 50px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
 }
 
 .four_columns{
   width: 100vw;
   display: flex;
   justify-content: center;
-  padding: 10px;
+  margin: 1%;
 }
 
 .news_post{
-  font-size: 20px;
-  font-family: "Arial";
+  max-width: 24%;
+  font-weight: 500;
   background-color: #e3e3e3;
-  margin: 3px;
-  padding: 10px;
+  padding: 15px;
+  margin: 5px;
+}
+
+/* End Global Section Styles */
+
+#AFI{
+  background-color: blue;
+  color: #ffffff;
 }
 
 
@@ -138,7 +207,7 @@ section{
  */
 
 .hidden,
-[hidden] {
+[hidden]{
   display: none !important;
 }
 
@@ -151,7 +220,7 @@ section{
  *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
  */
 
-.sr-only {
+.sr-only{
   border: 0;
   clip: rect(0, 0, 0, 0);
   height: 1px;
@@ -171,7 +240,7 @@ section{
  */
 
 .sr-only.focusable:active,
-.sr-only.focusable:focus {
+.sr-only.focusable:focus{
   clip: auto;
   height: auto;
   margin: 0;
@@ -185,7 +254,7 @@ section{
  * Hide visually and from screen readers, but maintain layout
  */
 
-.invisible {
+.invisible{
   visibility: hidden;
 }
 
@@ -217,7 +286,7 @@ section{
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (min-width: 35em){
   /* Style adjustments for viewports that meet the condition */
 }
 
@@ -234,7 +303,7 @@ section{
    https://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 
-@media print {
+@media print{
   *,
   *::before,
   *::after {
@@ -246,15 +315,15 @@ section{
   }
 
   a,
-  a:visited {
+  a:visited{
     text-decoration: underline;
   }
 
-  a[href]::after {
+  a[href]::after{
     content: " (" attr(href) ")";
   }
 
-  abbr[title]::after {
+  abbr[title]::after{
     content: " (" attr(title) ")";
   }
 
@@ -263,16 +332,16 @@ section{
    * or use the `javascript:` pseudo protocol
    */
   a[href^="#"]::after,
-  a[href^="javascript:"]::after {
+  a[href^="javascript:"]::after{
     content: "";
   }
 
-  pre {
+  pre{
     white-space: pre-wrap !important;
   }
 
   pre,
-  blockquote {
+  blockquote{
     border: 1px solid #999;
     page-break-inside: avoid;
   }
@@ -281,24 +350,24 @@ section{
    * Printing Tables:
    * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
    */
-  thead {
+  thead{
     display: table-header-group;
   }
 
   tr,
-  img {
+  img{
     page-break-inside: avoid;
   }
 
   p,
   h2,
-  h3 {
+  h3{
     orphans: 3;
     widows: 3;
   }
 
   h2,
-  h3 {
+  h3{
     page-break-after: avoid;
   }
 }
